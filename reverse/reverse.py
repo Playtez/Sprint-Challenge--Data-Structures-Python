@@ -27,6 +27,7 @@ class LinkedList:
             node.set_next(self.head)
 
         self.head = node
+        print("self.head :",self.head.value)
 
     def contains(self, value):
         if not self.head:
@@ -47,4 +48,24 @@ class LinkedList:
 
     def reverse_list(self, node, prev):
         # You must use recursion for this solution
-        pass
+        if node is None:
+            return
+        if node.get_next() is None: 
+            self.head = node
+            return
+        self.reverse_list(node.next_node, None)
+       # 3 pointers - previous, current, next
+        temp = node.get_next()
+        temp.set_next(node)
+        node.set_next(None)
+
+        # self.head.value = 5
+        # node.value = 5 
+        # prev = None
+        # self.head.next_node.value = 4
+
+
+        # node_next = self.head.next_node  # 
+        # prev = self.head.next_node
+        
+        

@@ -19,13 +19,13 @@ duplicates = []  # Return the list of duplicates in this data structure
 #         if name_1 == name_2:
 #             duplicates.append(name_1)
 
-bst = BinarySearchTree(names_1[0])
-# create a list comprehension inserting all of the names inside the binary search tree
+bst = BinarySearchTree(names_1[0]) # created an instance of BST and declared root
+# create two for loops inserting all of the names inside the binary search tree
 for name in names_1:
-    bst.insert(name)
+    bst.insert(name)  # using the insert method/ function from  Binary Search Tree
     
 for name in names_2:
-    if bst.contains(name):
+    if bst.contains(name):  # using the contains method/function from BST
         duplicates.append(name)
 
 end_time = time.time()
